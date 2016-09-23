@@ -208,12 +208,22 @@ namespace Sharp.Xmpp.Extensions
         /// <param name="jid">Chat room</param>
         /// <param name="nickname">Desired nickname</param>
         /// <param name="password">(Optional) Password</param>
-        public void JoinRoom(Jid jid, string nickname, string password = null)
+        /// <param name="history">(Optional) History</param>
+        public void JoinRoom(Jid jid, string nickname, string password = null, History history = null)
         {
             XmlElement elem = Xml.Element("x", MucNs.NsMain);
 
             if (!string.IsNullOrEmpty(password))
                 elem.Child(Xml.Element("password").Text(password));
+
+            if (!ReferenceEquals(null, history))
+            {
+                foreach (XmlElement historyElement in history.Data.GetElementsByTagName("history"))
+                {
+                    elem.Child(historyElement);
+                    break;
+                }
+            }
 
             Jid joinRequest = new Jid(jid.Domain, jid.Node, nickname);
             var msg = new Im.Presence(joinRequest, im.Jid, PresenceType.Available, null, null, elem);

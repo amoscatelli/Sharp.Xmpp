@@ -1785,10 +1785,11 @@ namespace Sharp.Xmpp.Client
         /// <param name="chatRoom">Chat room</param>
         /// <param name="nickname">Desired nickname</param>
         /// <param name="password">(Optional) Password</param>
-        public void JoinRoom(Jid chatRoom, string nickname, string password = null)
+        /// <param name="history">(Optional) History</param>
+        public void JoinRoom(Jid chatRoom, string nickname, string password = null, History history = null)
         {
             AssertValid();
-            groupChat.JoinRoom(chatRoom, nickname, password);
+            groupChat.JoinRoom(chatRoom, nickname, password, history);
         }
 
         /// <summary>
