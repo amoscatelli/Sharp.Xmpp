@@ -283,6 +283,7 @@ namespace Sharp.Xmpp.Im
         /// Initializes a new instance of the XmppIm.
         /// </summary>
         /// <param name="hostname">The hostname of the XMPP server to connect to.</param>
+        /// <param name="address">The host address of the XMPP server to connect to.</param>
         /// <param name="username">The username with which to authenticate. In XMPP jargon
         /// this is known as the 'node' part of the JID.</param>
         /// <param name="password">The password with which to authenticate.</param>
@@ -298,10 +299,10 @@ namespace Sharp.Xmpp.Im
         /// parameter is the empty string.</exception>
         /// <exception cref="ArgumentOutOfRangeException">The value of the port parameter
         /// is not a valid port number.</exception>
-        public XmppIm(string hostname, string username, string password,
+        public XmppIm(string hostname, string address, string username, string password,
             int port = 5222, bool tls = true, RemoteCertificateValidationCallback validate = null)
         {
-            core = new XmppCore(hostname, username, password, port, tls, validate);
+            core = new XmppCore(hostname, address, username, password, port, tls, validate);
             SetupEventHandlers();
         }
 

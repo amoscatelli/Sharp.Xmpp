@@ -122,6 +122,8 @@ namespace Sharp.Xmpp.Extensions
         /// if fires the callback function
         /// </summary>
         /// <param name="jid">The JID of the XMPP entity to get.</param>
+        /// <param name="request"></param>
+        /// <param name="callback"></param>
         /// <exception cref="ArgumentNullException">The jid parameter
         /// is null.</exception>
         /// <exception cref="NotSupportedException">The XMPP entity with
@@ -175,6 +177,7 @@ namespace Sharp.Xmpp.Extensions
         /// if fires the callback function
         /// </summary>
         /// <param name="jid">The JID of the XMPP entity to get.</param>
+        /// <param name="request"></param>
         /// <exception cref="ArgumentNullException">The jid parameter
         /// is null.</exception>
         /// <exception cref="NotSupportedException">The XMPP entity with

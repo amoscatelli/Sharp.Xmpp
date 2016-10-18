@@ -679,6 +679,7 @@ namespace Sharp.Xmpp.Client
         /// Initializes a new instance of the XmppClient class.
         /// </summary>
         /// <param name="hostname">The hostname of the XMPP server to connect to.</param>
+        /// <param name="address">The host address of the XMPP server to connect to.</param>
         /// <param name="username">The username with which to authenticate. In XMPP jargon
         /// this is known as the 'node' part of the JID.</param>
         /// <param name="password">The password with which to authenticate.</param>
@@ -696,10 +697,10 @@ namespace Sharp.Xmpp.Client
         /// is not a valid port number.</exception>
         /// <remarks>Use this constructor if you wish to connect to an XMPP server using
         /// an existing set of user credentials.</remarks>
-        public XmppClient(string hostname, string username, string password,
+        public XmppClient(string hostname, string address, string username, string password,
             int port = 5222, bool tls = true, RemoteCertificateValidationCallback validate = null)
         {
-            im = new XmppIm(hostname, username, password, port, tls, validate);
+            im = new XmppIm(hostname, address, username, password, port, tls, validate);
             // Initialize the various extension modules.
             LoadExtensions();
         }
