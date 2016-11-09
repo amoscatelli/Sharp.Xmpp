@@ -377,7 +377,7 @@ namespace Sharp.Xmpp.Core
             else
             {
                 Hostname = hostname;
-                HostAddress = address;
+                HostAddress = string.IsNullOrEmpty(address) ? hostname : address;
                 Port = port;
             }
             Username = username;
@@ -1326,7 +1326,7 @@ namespace Sharp.Xmpp.Core
                     // FIXME: What should we do if an exception is thrown in one of the
                     // event handlers?
                     System.Diagnostics.Debug.WriteLine("Error in XMPP Core: " + e.StackTrace + e.ToString());
-                    //throw e;
+                    // throw e;
                 }
             }
         }
