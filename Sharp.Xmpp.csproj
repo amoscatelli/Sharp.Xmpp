@@ -53,11 +53,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ARSoft.Tools.Net, Version=2.2.6.0, Culture=neutral, PublicKeyToken=1940454cd762ec57, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Documents\Visual Studio 2015\Projects\ClientXMPP\packages\ARSoft.Tools.Net.2.2.6\lib\net45\ARSoft.Tools.Net.dll</HintPath>
+      <HintPath>D:\Librerie\ARSoft.Tools.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\..\..\Documents\Visual Studio 2015\Projects\ClientXMPP\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <HintPath>D:\Librerie\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

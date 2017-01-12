@@ -110,10 +110,11 @@ namespace Sharp.Xmpp.Extensions
             {
                 string safeValue = null;
 
-                if(value.HasValue)
+                if (value.HasValue)
                     safeValue = value.Value
-                        .ToUniversalTime()
-                        .ToString("yyyy-MM-ddTHH:mm:ssZ");
+                        //.ToUniversalTime()
+                        .ToString();
+                        //.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
                 ReplaceValue(sinceAttribute, safeValue);
             }
@@ -178,13 +179,22 @@ namespace Sharp.Xmpp.Extensions
 
         private void ReplaceValue(string attributeName, string value)
         {
-            const string zero = "0";
+            try
+            {
+                const string zero = "0";
 
-            HistoryElement.RemoveAllAttributes();
-            if (value == null)
-                HistoryElement.SetAttribute(maxCharsAttribute, zero);
-            else
-                HistoryElement.SetAttribute(attributeName, value);
+                HistoryElement.RemoveAllAttributes();
+                if (value == null)
+                    HistoryElement.SetAttribute(maxCharsAttribute, zero);
+                else
+                    HistoryElement.SetAttribute(attributeName, value);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
