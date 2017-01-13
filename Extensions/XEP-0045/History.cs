@@ -110,10 +110,10 @@ namespace Sharp.Xmpp.Extensions
             {
                 string safeValue = null;
 
-                if(value.HasValue)
-                    safeValue = value.Value
-                        .ToUniversalTime()
-                        .ToString("yyyy-MM-ddTHH:mm:ssZ");
+                if (value.HasValue)
+                    safeValue = value.Value.ToString();
+        //                .ToUniversalTime()
+        //                .ToString("yyyy-MM-ddTHH:mm:ssZ");
 
                 ReplaceValue(sinceAttribute, safeValue);
             }
