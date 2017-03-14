@@ -111,9 +111,10 @@ namespace Sharp.Xmpp.Extensions
                 string safeValue = null;
 
                 if (value.HasValue)
-                    safeValue = value.Value.ToString();
-        //                .ToUniversalTime()
-        //                .ToString("yyyy-MM-ddTHH:mm:ssZ");
+                    safeValue = value.Value
+                        //.ToUniversalTime()
+                        .ToString("yyyy-MM-ddTHH:mm:ss.fffzzz", System.Globalization.CultureInfo.InvariantCulture);
+                        //.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
                 ReplaceValue(sinceAttribute, safeValue);
             }
@@ -188,7 +189,7 @@ namespace Sharp.Xmpp.Extensions
                 else
                     HistoryElement.SetAttribute(attributeName, value);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
